@@ -12,6 +12,10 @@
 #define LOWER 1
 #define UPPER 2
 
+&led_strip {
+    chain-length = <21>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -66,6 +70,3 @@
     };
 };
 
-&led_strip {
-    chain-length = <27>;
-};
