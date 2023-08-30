@@ -12,9 +12,10 @@
  * Note: Keyboard input must be set to "British PC"
  *
  */
-#define BASE 0
+#define BASE  0
 #define LOWER 1
 #define UPPER 2
+#define HRDWR 3
 
 &led_strip {
     chain-length = <21>;
@@ -25,34 +26,34 @@
         compatible = "zmk,keymap";
 
         base {
-            // ------------------------------------------------------------------------------------------
-            // |  ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  | BKSP      |
-            // |  TAB |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  |  ;  |  ',@      |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? | ENT/SHFT  |
-            // -------------------| LWR | UPR | GUI | /***/ | SPC | ALT  | CTRL |------------------------
-            // ------------------------------------------------------------------------------------------
+            // ----------------------------------------------------------------------------------------------
+            // | HRDW,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  | BKSP      |
+            // |  TAB     |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  |  ;  |  ',@      |
+            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? | ENT/SHFT  |
+            // -----------------------| LWR | UPR | GUI | /***/ | SPC | ALT  | CTRL |------------------------
+            // ----------------------------------------------------------------------------------------------
 
             bindings = <
-              &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T   /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-              &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &kp SQT
-            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt LSHIFT RETURN
-                         &mo LOWER  &mo UPPER   &kp LGUI   /***/   &kp SPACE   &kp LALT    &kp LCTRL
+              &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T   /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
+              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &kp SQT
+              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt LSHIFT RETURN
+                                &mo LOWER  &mo UPPER   &kp LGUI   /***/   &kp SPACE   &kp LALT    &kp LCTRL
             >;
         };
 
         lower {
             // -----------------------------------------------------------------------------------
-            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 | /***/ |  7  |  8  |  9  |  *  | PRV | VOLU |
-            // |  F7  |  F8 |  F9 | F10 | F11 | F12 | /***/ |  4  |  5  |  6  |  /  | PP  | MUTE |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 | /***/ |  1  |  2  |  3  |  =  | NXT | VOLD |
-            // -------------------|     |     |     | /***/ |  +  |  0  |  -  |-------------------
+            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 | /***/ |  7  |  8  |  9  |  -  |  /  |     |
+            // |  F7  |  F8 |  F9 | F10 | F11 | F12 | /***/ |  4  |  5  |  6  |  +  |  *  |     |
+            // | SHFT |     |     |     |     |     | /***/ |  1  |  2  |  3  |  =  |     |     |
+            // -------------------|     |     |     | /***/ |     |  0  |     |-------------------
             // -----------------------------------------------------------------------------------
 
             bindings = <
-     &none         &none         &none         &none         &none         &none    /***/    &kp N7     &kp N8  &kp N9  &kp PLUS    &kp C_PREV  &kp C_VOL_UP
-     &none         &none         &none         &none         &none         &none    /***/    &kp N4     &kp N5  &kp N6  &kp MINUS   &kp C_PP    &kp K_MUTE
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    /***/    &kp N1     &kp N2  &kp N3  &kp EQUAL   &kp C_NEXT  &kp C_VOL_DN
-                                               &none         &none         &none    /***/    &kp SPACE  &kp N0  &none
+              &none       &none  &none   &none  &none   &none    /***/    &kp N7     &kp N8  &kp N9  &kp MINUS    &kp FSLH          &none 
+              &none       &none  &none   &none  &none   &none    /***/    &kp N4     &kp N5  &kp N6  &kp PLUS     &kp KP_MULTIPLY   &none
+              &trans      &none  &none   &none  &none   &none    /***/    &kp N1     &kp N2  &kp N3  &kp EQUAL    &none             &none 
+                                         &none  &none   &none    /***/    &none      &kp N0  &none
             >;
         };
 
@@ -60,15 +61,31 @@
             // ---------------------------------------------------------------------------------------------------
             // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |    &   |    *   |   (    |    )   |    #  |
             // |      |     |     |     |     |     | /***/ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |        |       |
-            // |      |     |     |     |     |     | /***/ |   -,_  |   =,+  |  [,{   |   ],}  |   \,|  |  `,~  |
+            // | SHFT |     |     |     |     |     | /***/ |   -,_  |   =,+  |  [,{   |   ],}  |   \,|  |  `,~  |
             // -------------------|     |     |     | /***/ |        |        |        |--------------------------
             // ---------------------------------------------------------------------------------------------------
 
             bindings = <
     &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp LPAR          &kp RPAR   &kp NUHS
     &none  &none   &none     &none     &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &none      &none
-    &none  &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp NUBS   &kp GRAVE
+    &trans &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp NUBS   &kp GRAVE
                              &none     &none      &trans      /***/   &trans            &trans            &trans
+            >;
+        };
+
+        hardware {
+            // ---------------------------------------------------------------------------------------------------------------------------
+            // |  RGB BRI+  |  RGB SAT+ | RGB HUE+ | RGB EFC+ |     | RGB TOG | /***/ |      |      |      |   PREV   | PLY/PSE |  NEXT  |
+            // |  RGB BRI-  |  RGB SAT- | RGB HUE- | RGB EFC- |     |         | /***/ |      |      |      | VOL DWN  |   MUTE  | VOL UP |
+            // |   BTCLR    |    BT1    |   BT2    |   BT3    | BT4 |   BT5   | /***/ |      |      |      |          |         |        |
+            // ------------------------------------|          |     |         | /***/ |      |      |      |------------------------------
+            // ---------------------------------------------------------------------------------------------------------------------------
+
+            bindings = <
+    &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG    /***/  &none   &none   &none   &kp C_PREV    &kp C_PP    &kp C_NEXT
+    &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none              /***/  &none   &none   &none   &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP
+            &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 /***/  &none   &none   &none   &none         &none       &none
+                                                                    &none   &none   &trans   /***/  &trans  &trans  &trans
             >;
         };
     };
