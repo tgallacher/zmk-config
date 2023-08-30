@@ -21,14 +21,14 @@
             // |  ESC |  Q  |  W  |  E  |  R  |  T  | ~//~ |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // |  TAB |  A  |  S  |  D  |  F  |  G  | ~//~ |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  | ~//~ |  N  |  M   |  ,  |  .  |  /  | ENT/SHFT  |
-            //                    | LWR | UPR | GUI | ~//~ | ALT | SPC  | CTRL |
+            //                    | LWR | UPR | GUI | ~//~ | SPC | ALT  | CTRL |
             // -----------------------------------------------------------------------------------------
 
             bindings = <
   &kp ESC  &kp Q  &kp W      &kp E      &kp R     &kp T       &kp Y      &kp U      &kp I    &kp O     &kp P           &kp BSPC
   &kp TAB  &kp A  &kp S      &kp D      &kp F     &kp G       &kp H      &kp J      &kp K    &kp L  &kp SEMI            &kp SQT
 &kp LSHFT  &kp Z  &kp X      &kp C      &kp V     &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt LSHIFT RETURN
-                         &mo LOWER  &mo UPPER  &kp LGUI    &kp LALT  &kp SPACE  &kp LCTRL
+                         &mo LOWER  &mo UPPER  &kp LGUI       &kp SPACE  &kp LALT   &kp LCTRL
             >;
         };
 
@@ -36,7 +36,7 @@
             // -----------------------------------------------------------------------------------------
             // |      |     |     |     |     |     | ~//~ |  7  |  8  |  9  |  +  | PRV | VOLU |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 | ~//~ |  4  |  5  |  6  |  -  | PP  | MUTE |
-            // | SHFT |     |     |     |     |     | ~//~ |  1  |  2  |  3  |  =  | NXT | VOLD |
+            // |      |     |     |     |     |     | ~//~ |  1  |  2  |  3  |  =  | NXT | VOLD |
             //                    |     |     |     | ~//~ | SPC |  0  |     |
             // -----------------------------------------------------------------------------------------
 
