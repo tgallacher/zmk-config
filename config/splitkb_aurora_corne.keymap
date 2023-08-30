@@ -61,9 +61,9 @@
             // --------------------------------------------------------------------------------------------------
 
             bindings = <
-    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp LPAR          &kp RPAR   &kp NON_US_HASH
+    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp LPAR          &kp RPAR   &kp NUHS
     &none  &none   &none     &none     &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &none      &none
-    &none  &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp BSLH   &kp GRAVE
+    &none  &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp NUBS   &kp GRAVE
                              &none     &none      &trans      /***/   &trans            &trans            &trans
             >;
         };
