@@ -22,51 +22,50 @@
 
         base {
             // -----------------------------------------------------------------------------------------
-            // |  ESC |  Q  |  W  |  E  |  R  |  T  | ~//~ |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // |  TAB |  A  |  S  |  D  |  F  |  G  | ~//~ |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  | ~//~ |  N  |  M   |  ,  |  .  |  /  | ENT/SHFT  |
-            //                    | LWR | UPR | GUI | ~//~ | SPC | ALT  | CTRL |
+            // |  ESC |  Q  |  W  |  E  |  R  |  T  | ~//~ |  Y  |  U   |  I   |  O  |  P  | BKSP      |
+            // |  TAB |  A  |  S  |  D  |  F  |  G  | ~//~ |  H  |  J   |  K   |  L  |  ;  |  '        |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  | ~//~ |  N  |  M   |  ,   |  .  |  /  | ENT/SHFT  |
+            // -------------------| LWR | UPR | GUI | ~//~ | SPC | ALT  | CTRL |------------------------
             // -----------------------------------------------------------------------------------------
 
             bindings = <
-  &kp ESC  &kp Q  &kp W      &kp E      &kp R     &kp T       &kp Y      &kp U      &kp I    &kp O     &kp P           &kp BSPC
-  &kp TAB  &kp A  &kp S      &kp D      &kp F     &kp G       &kp H      &kp J      &kp K    &kp L  &kp SEMI            &kp SQT
-&kp LSHFT  &kp Z  &kp X      &kp C      &kp V     &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt LSHIFT RETURN
-                         &mo LOWER  &mo UPPER  &kp LGUI       &kp SPACE  &kp LALT   &kp LCTRL
+              &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T   /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
+              &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &kp SQT
+            &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt LSHIFT RETURN
+                         &mo LOWER  &mo UPPER   &kp LGUI   /***/   &kp SPACE   &kp LALT    &kp LCTRL
             >;
         };
 
         lower {
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |     | ~//~ |  7  |  8  |  9  |  +  | PRV | VOLU |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 | ~//~ |  4  |  5  |  6  |  -  | PP  | MUTE |
-            // |      |     |     |     |     |     | ~//~ |  1  |  2  |  3  |  =  | NXT | VOLD |
-            //                    |     |     |     | ~//~ | SPC |  0  |     |
-            // -----------------------------------------------------------------------------------------
+            // ----------------------------------------------------------------------------------
+            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 | ~//~ |  7  |  8  |  9  |  *  | PRV | VOLU |
+            // |  F7  |  F8 |  F9 | F10 | F11 | F12 | ~//~ |  4  |  5  |  6  |  /  | PP  | MUTE |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 | ~//~ |  1  |  2  |  3  |  =  | NXT | VOLD |
+            // -------------------|     |     |     | ~//~ |  +  |  0  |  -  |-------------------
+            // ----------------------------------------------------------------------------------
 
             bindings = <
-     &none         &none         &none         &none         &none         &none       &kp N7  &kp N8  &kp N9   &kp PLUS  &kp C_PREV  &kp C_VOL_UP
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &kp N4  &kp N5  &kp N6  &kp MINUS    &kp C_PP    &kp K_MUTE
-     &none         &none         &none         &none         &none         &none       &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp C_NEXT  &kp C_VOL_DN
-                                               &none         &none         &none    &kp SPACE  &kp N0   &none
+     &none         &none         &none         &none         &none         &none    /***/    &kp N7     &kp N8  &kp N9  &kp PLUS    &kp C_PREV  &kp C_VOL_UP
+     &none         &none         &none         &none         &none         &none    /***/    &kp N4     &kp N5  &kp N6  &kp MINUS   &kp C_PP    &kp K_MUTE
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    /***/    &kp N1     &kp N2  &kp N3  &kp EQUAL   &kp C_NEXT  &kp C_VOL_DN
+                                               &none         &none         &none    /***/    &kp SPACE  &kp N0  &none
             >;
         };
 
         upper {
-            // -----------------------------------------------------------------------------------------
-            // |      |  !  |  @  |  #  |  $  |  %  | ~//~ |    ^   |    &   |    *   |   (    |    )   | BKSP  |
-            // |      |     |     |     |     |     | ~//~ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |        |       |
-            // | SHFT |     |     |     |     |     | ~//~ |   -/_  |   =/+  |  [/{   |   ]/}  |   \'|' |  `/~  |
-            //                    |     |     |     | ~//~ |  SPC   |  ALT   |        |
-            // -----------------------------------------------------------------------------------------
+            // --------------------------------------------------------------------------------------------------
+            // |      |  !  |  @  |  £  |  $  |  %  | ~//~ |    ^   |    &   |    *   |   (    |    )   | BKSP  |
+            // |      |     |     |     |     |     | ~//~ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |        |  hash |
+            // |      |     |     |     |     |     | ~//~ |   -/_  |   =/+  |  [/{   |   ]/}  |   \'|' |  `/~  |
+            // -------------------|     |     |     | ~//~ |        |        |        |--------------------------
+            // --------------------------------------------------------------------------------------------------
 
             bindings = <
-    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT         &kp CARET        &kp AMPS  &kp KP_MULTIPLY         &kp LPAR  &kp RPAR   &kp BSPC
-    &none     &none   &none     &none     &none      &none    &kp LEFT_ARROW  &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW     &none      &none
-&kp LSHFT     &none   &none     &none     &none      &none         &kp MINUS       &kp EQUAL         &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-                                &none     &none     &trans            &trans          &trans           &trans
+    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp LPAR          &kp RPAR   &kp BSPC
+    &none  &none   &none     &none     &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &none      &kp NUSH
+    &none  &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp BSLH   &kp GRAVE
+                             &none     &none      &trans      /***/   &trans            &trans            &trans
             >;
         };
     };
 };
-
