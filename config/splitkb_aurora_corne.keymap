@@ -10,7 +10,7 @@
 
 /*
  *
- * Note: Keyboard input must be set to "British PC"
+ * Note: Keyboard input must be set to "British PC" and the keyboard type must be ISO
  *
  */
 #define BASE  0
