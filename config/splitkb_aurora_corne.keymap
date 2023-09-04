@@ -10,7 +10,7 @@
 
 /*
  *
- * Note: Keyboard input must be set to "British PC" and the keyboard type must be ISO
+ * Note: OS keyboard input must be set to "British PC" and the keyboard type must be ISO
  *
  */
 #define BASE  0
@@ -27,18 +27,18 @@
         compatible = "zmk,keymap";
 
         base {
-            // ----------------------------------------------------------------------------------------------
-            // | HRDW,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  | BKSP      |
-            // |  TAB     |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  |  ;  |  ',@      |
-            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? | ENT/SHFT  |
-            // -----------------------| LWR | UPR | GUI | /***/ | SPC | ALT  | CTRL |------------------------
-            // ----------------------------------------------------------------------------------------------
+            // ------------------------------------------------------------------------------------------
+            // | HRDW,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |    BKSP    |
+            // | TAB      |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;,: | UPPR,ENTR  |
+            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? |    SHFT    |
+            // -----------------------| LWR | GUI | CTRL| /***/ | SPC | ALT  |      |--------------------
+            // ------------------------------------------------------------------------------------------
 
             bindings = <
               &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T   /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &kp SQT
-              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt LSHIFT RETURN
-                                &mo LOWER  &mo UPPER   &kp LGUI   /***/   &kp SPACE   &kp LALT    &kp LCTRL
+              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER RETURN 
+              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &kp LSHIFT
+                                &mo LOWER  &kp LGUI   &kp LCTRL   /***/   &kp SPACE   &kp LALT    &none
             >;
         };
 
@@ -60,16 +60,16 @@
 
         upper {
             // ---------------------------------------------------------------------------------------------------
-            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |    &   |    *   |   (    |    )   |    #  |
-            // |      |     |     |     |     |     | /***/ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |        |       |
-            // | SHFT |     |     |     |     |     | /***/ |   -,_  |   =,+  |  [,{   |   ],}  |   \,|  |  `,~  |
+            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |    &   |    *   |        |   (   |   )   |
+            // |      |     | ',@ | #,~ |     |     | /***/ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |  [,{  |  ],}  |
+            // | SHFT |     |     |     |     |     | /***/ |        |        |  -,_   |   =,+  |  \,|  |  `,¬  |
             // -------------------|     |     |     | /***/ |        |        |        |--------------------------
             // ---------------------------------------------------------------------------------------------------
 
             bindings = <
-    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp LPAR          &kp RPAR   &kp NUHS
-    &none  &none   &none     &none     &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &none      &none
-    &trans &none   &none     &none     &none      &none       /***/   &kp MINUS         &kp EQUAL         &kp LBKT          &kp RBKT          &kp NUBS   &kp GRAVE
+    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &none             &kp LPAR   &kp RPAR   
+    &none  &none   &none SQT &kp NUHS  &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &kp LBKT   &kp RBKT
+    &trans &none   &none     &none     &none      &none       /***/   &none             &none             &kp MINUS         &kp EQUAL         &kp NUBS   &kp GRAVE
                              &none     &none      &trans      /***/   &trans            &trans            &trans
             >;
         };
@@ -92,3 +92,4 @@
     };
 };
 
+// vi: ft=devicetree
