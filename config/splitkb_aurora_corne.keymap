@@ -37,7 +37,7 @@
             bindings = <
               &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
               &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER SQT 
-              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &lt RSHIFT RETURN
+              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &ht RSHIFT RETURN
                                 &mo LOWER   &kp LCTRL     &kp LGUI    /***/   &kp SPACE   &kp LALT    &kp RETURN
             >;
         };
