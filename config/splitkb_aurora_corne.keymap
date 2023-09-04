@@ -60,31 +60,31 @@
 
         upper {
             // ---------------------------------------------------------------------------------------------------
-            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |    &   |    *   |        |   (   |   )   |
-            // |      |     | ',@ | #,~ |     |     | /***/ | L_ARRW | D_ARRW | U_ARRW | R_ARRW |  [,{  |  ],}  |
-            // | SHFT |     |     |     |     |     | /***/ |        |        |  -,_   |   =,+  |  \,|  |  `,¬  |
+            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |    &   |    *   |   =,+   |   (   |   )   |
+            // |      |     | ',@ | #,~ |     |     | /***/ |        |        |        |   -,_   |  [,{  |  ],}  |
+            // | SHFT |     |     |     |     |     | /***/ |        |        |        |         |  \,|  |  `,¬  |
             // -------------------|     |     |     | /***/ |        |        |        |--------------------------
             // ---------------------------------------------------------------------------------------------------
 
             bindings = <
-    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &none             &kp LPAR   &kp RPAR   
-    &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW   &kp LBKT   &kp RBKT
-    &trans &none     &none   &none     &none      &none       /***/   &none             &none             &kp MINUS         &kp EQUAL         &kp NUBS   &kp GRAVE
+    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET         &kp AMPS          &kp KP_MULTIPLY   &kp EQUAL     &kp LPAR   &kp RPAR   
+    &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW      &kp MINUS     &kp LBKT   &kp RBKT
+    &trans &none     &none   &none     &none      &none       /***/   &none             &none             &none             &none         &kp NUBS   &kp GRAVE
                              &none     &none      &trans      /***/   &trans            &trans            &trans
             >;
         };
 
         hardware {
-            // --------------------------------------------------------------------------------------------------------------------------------
-            // |  RGB BRI+  |  RGB SAT+ | RGB HUE+ | RGB EFC+ | RGB SPD+ | RGB TOG | /***/ |      |      |      |   PREV   | PLY/PSE |  NEXT  |
-            // |  RGB BRI-  |  RGB SAT- | RGB HUE- | RGB EFC- | RGB SPD- |         | /***/ |      |      |      | VOL DWN  |   MUTE  | VOL UP |
-            // |   BTCLR    |    BT1    |   BT2    |   BT3    |   BT4    |   BT5   | /***/ |      |      |      |          |         |        |
-            // ------------------------------------|          |          |         | /***/ |      |      |      |------------------------------
-            // --------------------------------------------------------------------------------------------------------------------------------
+            // -----------------------------------------------------------------------------------------------------------------------------------------
+            // |  RGB BRI+  |  RGB SAT+ | RGB HUE+ | RGB EFC+ | RGB SPD+ | RGB TOG | /***/ | VOL DWN  |   MUTE  | VOL UP |   PREV   | PLY/PSE |  NEXT  |
+            // |  RGB BRI-  |  RGB SAT- | RGB HUE- | RGB EFC- | RGB SPD- |         | /***/ |  L_ARRW  |  D_ARRW | U_ARRW |  R_ARRW  |         |        |      
+            // |   BTCLR    |    BT1    |   BT2    |   BT3    |   BT4    |   BT5   | /***/ |          |         |        |          |         |        |
+            // ------------------------------------|          |          |         | /***/ |          |         |        |------------------------------
+            // -----------------------------------------------------------------------------------------------------------------------------------------
 
             bindings = <
     &rgb_ug RGB_BRI   &rgb_ug RGB_SAI   &rgb_ug RGB_HUI   &rgb_ug RGB_EFF   &rgb_ug RGB_SPI   &rgb_ug RGB_TOG    /***/  &none   &none   &none   &kp C_PREV    &kp C_PP    &kp C_NEXT
-    &rgb_ug RGB_BRD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPD   &none              /***/  &none   &none   &none   &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP
+    &rgb_ug RGB_BRD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPD   &none              /***/  &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP
          &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3   &bt BT_SEL 4       /***/  &none   &none   &none   &none         &none       &none
                                                                     &none             &none   &trans             /***/  &trans  &trans  &trans
             >;
