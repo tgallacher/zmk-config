@@ -27,18 +27,18 @@
         compatible = "zmk,keymap";
 
         base {
-            // ------------------------------------------------------------------------------------------
+            // -----------------------------------------------------------------------------------------------
             // | HRDW,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |    BKSP    |
-            // | TAB      |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;,: | UPPR,ENTR  |
+            // | TAB      |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;,: |   UPPR,'@  |
             // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? |    SHFT    |
-            // -----------------------| LWR | GUI | CTRL| /***/ | SPC | ALT  |      |--------------------
-            // ------------------------------------------------------------------------------------------
+            // -----------------------| LWR | CTRL| GUI | /***/ | SPC | ALT  | ENTR |-------------------------
+            // -----------------------------------------------------------------------------------------------
 
             bindings = <
-              &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T   /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G   /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER RETURN 
-              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B   /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &kp RSHIFT
-                                &mo LOWER  &kp LGUI   &kp LCTRL   /***/   &kp SPACE   &kp LALT    &none
+              &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
+              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER SQT 
+              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &kp RSHIFT
+                                &mo LOWER   &kp LCTRL     &kp LGUI    /***/   &kp SPACE   &kp LALT    &kp RETURN
             >;
         };
       
@@ -61,15 +61,15 @@
         upper {
             // ---------------------------------------------------------------------------------------------------
             // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |  &   |    *   |   (   |   )   |  BKSP |
-            // |      |     | ',@ | #,~ |     |     | /***/ |        |      |   =,+  |  [,{  |  [,{  |       |
-            // | SHFT |     |     |     |     |     | /***/ |        |      |   -,_  |  \,|  |  \,|  |  `,¬  |
+            // |      |     | ',@ | #,~ |     |     | /***/ |        |  -,  |   =,+  |  [,{  |  [,{  |       |
+            // | SHFT |     |     |     |     |     | /***/ |        |      |        |  \,|  |  \,|  |  `,¬  |
             // -------------------|     |     |     | /***/ |        |      |        |--------------------------
             // ---------------------------------------------------------------------------------------------------
 
             bindings = <
     &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY   &kp LPAR   &kp RPAR   &trans
-    &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &none         &none       &kp EQUAL         &kp LBKT   &kp RBKT   &none
-    &trans &none     &none   &none     &none      &none       /***/   &none         &none       &kp MINUS         &none      &kp NUBS   &kp GRAVE
+    &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &none         &kp MINUS   &kp EQUAL         &kp LBKT   &kp RBKT   &none
+    &trans &none     &none   &none     &none      &none       /***/   &none         &none       &none             &none      &kp NUBS   &kp GRAVE
                              &none     &none      &trans      /***/   &trans        &trans      &trans
             >;
         };
