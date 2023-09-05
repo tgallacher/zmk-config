@@ -20,7 +20,7 @@
 #define NAV    4
 
 &led_strip {
-    chain-length = <27>;
+    chain-length = <6>;
 };
 
 / {
