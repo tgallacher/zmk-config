@@ -10,7 +10,7 @@
 
 /*
  *
- * Note: OS keyboard input must be set to "British PC" and the keyboard type must be ISO
+ * Note: OS keyboard input must be set to "British PC" and the keyboard type can be ISO or ANSI
  *
  */
 #define BASE  0
@@ -28,15 +28,15 @@
 
         base {
             // -----------------------------------------------------------------------------------------------
-            // | HRDW,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |    BKSP    |
-            // | TAB      |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;,: |   UPPR,'@  |
-            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,,<  | .,> | /,? | SHFT,ENTR  |
+            // | ESC      |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |    BKSP    |
+            // | HRDW,TAB |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;:  |   UPPR,'@  |
+            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,<   | .>  | /?  | SHFT,ENTR  |
             // -----------------------| LWR | CTRL| GUI | /***/ | SPC | ALT  | ENTR |-------------------------
             // -----------------------------------------------------------------------------------------------
 
             bindings = <
-              &lt HRDWR ESC   &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-              &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER SQT 
+              &kp ESC         &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
+              &lt HRDWR TAB   &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER SQT 
               &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt RSHIFT RETURN
                                 &mo LOWER   &kp LCTRL     &kp LGUI    /***/   &kp SPACE   &kp LALT    &kp RETURN
             >;
@@ -59,17 +59,17 @@
         };
 
         upper {
-            // ---------------------------------------------------------------------------------------------------
-            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |    ^   |  &   |    *   |   (   |   )   |  BKSP |
-            // |      |     | ',@ | #,~ |     |     | /***/ |        |  -,  |   =,+  |  [,{  |  [,{  |       |
-            // | SHFT |     |     |     |     |     | /***/ |        |      |        |  \,|  |  \,|  |  `,¬  |
-            // -------------------|     |     |     | /***/ |        |      |        |--------------------------
-            // ---------------------------------------------------------------------------------------------------
+            // --------------------------------------------------------------------------------------------
+            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |  ^  |  &   |    *   |   (   |   )   |  BKSP |
+            // |      |     |  '@ |  #~ |     |     | /***/ |     |  -_  |    =+  |   [{  |  [{   |       |
+            // | SHFT |     |     |     |     |     | /***/ |     |      |    `¬  |   \|  |       |       |
+            // -------------------|     |     |     | /***/ |     |      |        |------------------------
+            // --------------------------------------------------------------------------------------------
 
             bindings = <
     &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY   &kp LPAR   &kp RPAR   &trans
     &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &none         &kp MINUS   &kp EQUAL         &kp LBKT   &kp RBKT   &none
-    &trans &none     &none   &none     &none      &none       /***/   &none         &none       &none             &none      &kp NUBS   &kp GRAVE
+    &trans &none     &none   &none     &none      &none       /***/   &none         &none       &kp GRAVE         &kp NUBS   &none      &none      
                              &none     &none      &trans      /***/   &trans        &trans      &trans
             >;
         };
