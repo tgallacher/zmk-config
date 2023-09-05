@@ -13,10 +13,11 @@
  * Note: OS keyboard input must be set to "British PC" and the keyboard type must be ISO
  *
  */
-#define BASE  0
-#define LOWER 1
-#define UPPER 2
-#define HRDWR 3
+#define BASE   0
+#define NUMFN  1
+#define SYMBL  2
+#define HRDWR  3
+#define NAV    4
 
 &led_strip {
     chain-length = <27>;
@@ -27,22 +28,22 @@
         compatible = "zmk,keymap";
 
         base {
-            // -----------------------------------------------------------------------------------------------
-            // | ESC      |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |    BKSP    |
-            // | HRDW,TAB |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;:  |   UPPR,'@  |
-            // | SHFT     |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,<   | .>  | /?  | SHFT,ENTR  |
-            // -----------------------| LWR | CTRL| GUI | /***/ | SPC | ALT  | ENTR |-------------------------
-            // -----------------------------------------------------------------------------------------------
+            // ---------------------------------------------------------------------------------------------------
+            // | NUMFN,ESC |  Q      |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |   BKSP    |
+            // | NAV,TAB   |  A      |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;:  | SYMBL,'@  |
+            // | SHFT      | CTRL,Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,<   | .>  | /?  | SHFT,ENTR |
+            // ---------------------------| HRDW | -_  | GUI | /***/ | SPC | ALT  |      |------------------------
+            // ---------------------------------------------------------------------------------------------------
 
             bindings = <
-              &kp ESC         &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-              &lt HRDWR TAB   &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt UPPER SQT 
-              &kp LSHFT       &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt RSHIFT RETURN
-                                &mo LOWER   &kp LCTRL     &kp LGUI    /***/   &kp SPACE   &kp LALT    &kp RETURN
+            &lt NUMFN ESC     &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
+            &lt NAV TAB       &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt SYMBL SQT 
+            &kp LSHFT   &mt LCTRL Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt RSHIFT RETURN
+                                &mo HRDWR   &kp MINUS     &kp LGUI    /***/   &kp SPACE   &kp LALT    &none
             >;
         };
       
-        lower {
+        num_fn {
             // -----------------------------------------------------------------------------------
             // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 | /***/ |  7  |  8  |  9  |  -  |  /  |     |
             // |  F7  |  F8 |  F9 | F10 | F11 | F12 | /***/ |  4  |  5  |  6  |  +  |  *  |     |
@@ -58,7 +59,7 @@
             >;
         };
 
-        upper {
+        symnols {
             // --------------------------------------------------------------------------------------------
             // |      |  !  |  "  |  £  |  $  |  %  | /***/ |  ^  |  &   |    *   |   (   |   )   |  BKSP |
             // |      |     |  '@ |  #~ |     |     | /***/ |     |  -_  |    =+  |   [{  |  [{   |       |
@@ -87,6 +88,23 @@
     &rgb_ug RGB_BRD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPD   &none              /***/  &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW    &none       &none
          &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3   &bt BT_SEL 4       /***/  &none            &none            &none          &none              &none       &none
                                                                     &none             &none   &trans             /***/  &trans  &trans  &trans
+            >;
+        };
+        
+
+        nav {
+            // --------------------------------------------------------------------------------------------------------------------------------------------
+            // |          |          |          |          |           |          | /***/ |          |          |          |          |          |        |
+            // |          |          |          |          |           |          | /***/ |  L_ARRW  |  D_ARRW  |  U_ARRW  |  R_ARRW  |          |        |      
+            // |          |          |          |          |           |          | /***/ |          |          |          |          |          |        |
+            // ---------------------------------|          |           |          | /***/ |          |          |          |-------------------------------
+            // --------------------------------------------------------------------------------------------------------------------------------------------
+
+            bindings = <
+              &none     &none     &none     &none     &none     &none   /***/   &none            &none            &none           &none             &none   &trans
+              &none     &none     &none     &none     &none     &none   /***/   &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW    &kp RIGHT_ARROW   &none   &none
+              &trans    &none     &none     &none     &none     &none   /***/   &none            &none            &none           &none             &none   &none      
+                                      &none     &none      &trans       /***/   &trans           &trans           &trans
             >;
         };
     };
