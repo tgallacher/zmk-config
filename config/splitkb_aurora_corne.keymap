@@ -70,7 +70,7 @@
             bindings = <
     &none  &kp EXCL  &kp EQUAL  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY   &kp MINUS  &kp AT     &trans
     &none  &none     &none      &kp NUHS  &kp LBKT   &kp RBKT    /***/   &kp LPAR      &kp RPAR    &kp GRAVE         &kp NUBS   &none      &none
-    &trans &none     &none      &none     &none      &none       /***/   &none         &none       &none             &none      &none      &transp      
+    &trans &none     &none      &none     &none      &none       /***/   &none         &none       &none             &none      &none      &trans      
                                 &none     &none      &trans      /***/   &trans        &trans      &trans
             >;
         };
