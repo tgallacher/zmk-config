@@ -59,19 +59,19 @@
             >;
         };
 
-        symnols {
+        symbols {
             // --------------------------------------------------------------------------------------------
-            // |      |  !  |  "  |  £  |  $  |  %  | /***/ |  ^  |  &   |    *   |   (   |   )   |  BKSP |
-            // |      |     |  '@ |  #~ |     |     | /***/ |     |  -_  |    =+  |   [{  |  [{   |       |
-            // | SHFT |     |     |     |     |     | /***/ |     |      |    `¬  |   \|  |       |       |
+            // |      |  !  |  =+ |  £  |  $  |  %  | /***/ |  ^  |   &  |    *   |  -_   |   "   |  BKSP |
+            // |      |     |     |  #~ | [{  |  ]} | /***/ |  (  |   )  |   `¬   |  \|   |       |       |
+            // | SHFT |     |     |     |     |     | /***/ |     |      |        |       |       |       |
             // -------------------|     |     |     | /***/ |     |      |        |------------------------
             // --------------------------------------------------------------------------------------------
-
+       
             bindings = <
-    &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY   &kp LPAR   &kp RPAR   &trans
-    &none  &none     &kp SQT &kp NUHS  &none      &none       /***/   &none         &kp MINUS   &kp EQUAL         &kp LBKT   &kp RBKT   &none
-    &trans &none     &none   &none     &none      &none       /***/   &none         &none       &kp GRAVE         &kp NUBS   &none      &none      
-                             &none     &none      &trans      /***/   &trans        &trans      &trans
+    &none  &kp EXCL  &kp EQUAL  &kp HASH  &kp DLLR   &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY   &kp MINUS  &kp AT     &trans
+    &none  &none     &none      &kp NUHS  &kp LBKT   &kp RBKT    /***/   &kp LPAR      &kp RPAR    &kp GRAVE         &kp NUBS   &none      &none
+    &trans &none     &none      &none     &none      &none       /***/   &none         &none       &none             &none      &none      &transp      
+                                &none     &none      &trans      /***/   &trans        &trans      &trans
             >;
         };
 
