@@ -28,6 +28,14 @@
   debounce-release-ms = <3>;
 }
 
+&mt {
+  // hold behaviour only if another key is pressed during hold 
+  retro-tap;
+  // optimise for quick typing
+  quick-tap-ms = <125>;
+  global-quick-tap;
+}
+  
 / {
     keymap {
         compatible = "zmk,keymap";
