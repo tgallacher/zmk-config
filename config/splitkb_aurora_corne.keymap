@@ -26,7 +26,7 @@
 &kscan {
   debounce-press-ms = <3>;
   debounce-release-ms = <3>;
-}
+};
 
 &mt {
   // hold behaviour only if another key is pressed during hold 
@@ -34,7 +34,7 @@
   // optimise for quick typing
   quick-tap-ms = <125>;
   global-quick-tap;
-}
+};
   
 / {
     keymap {
