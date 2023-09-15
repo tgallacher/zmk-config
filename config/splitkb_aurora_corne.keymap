@@ -20,7 +20,7 @@
 #define NAV    4
 
 &led_strip {
-    chain-length = <6>;
+  chain-length = <6>;
 };
 
 &kscan {
@@ -33,7 +33,7 @@
   retro-tap;
   // optimise for quick typing
   quick-tap-ms = <125>;
-  global-quick-tap;
+  // global-quick-tap;
 };
   
 / {
