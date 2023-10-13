@@ -3,10 +3,28 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
+// helpers
+#include "../zmk-nodefree-config/helper.h"
+
+
+#define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
+#define _ARROW_KEYS_ &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW
+#define XXX XXX
+#define ___ &trans
+
+/* Global Settings */
+#define QUICK_TAP_MS 175
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
 
 /*
  *
@@ -20,107 +38,79 @@
 #define NAV    4
 
 &led_strip {
-  chain-length = <6>;
+  chain-length = <12>;
 };
 
-&kscan {
-  debounce-press-ms = <3>;
-  debounce-release-ms = <3>;
-};
+// &kscan {
+//   debounce-press-ms = <3>;
+//   debounce-release-ms = <3>;
+// };
 
-&mt {
-  // hold behaviour only if another key is pressed during hold 
-  retro-tap;
-  // optimise for quick typing
-  quick-tap-ms = <125>;
-  // global-quick-tap;
-};
-  
-/ {
-    keymap {
-        compatible = "zmk,keymap";
+/* Keymap */
 
-        base {
-            // -----------------------------------------------------------------------------------------------
-            // | NUMFN,ESC |  Q  |  W  |  E  |  R  |  T  | /***/ |  Y  |  U   |  I   |  O  |  P  |   BKSP    |
-            // | NAV,TAB   |  A  |  S  |  D  |  F  |  G  | /***/ |  H  |  J   |  K   |  L  | ;:  | SYMBL,"   |
-            // | SHFT      |  Z  |  X  |  C  |  V  |  B  | /***/ |  N  |  M   | ,<   | .>  | /?  | ENT,SHFT  |
-            // ---------------------| HRDW | CTRL  | CMD | /***/ | SPC | ALT  | ENTER |-----------------------
-            // -----------------------------------------------------------------------------------------------
+ZMK_LAYER(base,
+  // ╭───────────────┬───────┬────────┬───────────┬───────────┬──────────╮     ╭───────────┬───────────┬────────────┬─────────┬──────────┬───────────────────╮
+       &lt NUMFN ESC   &kp Q   &kp W    &kp E       &kp R       &kp T            &kp Y       &kp U       &kp I        &kp O     &kp P      &kp BSPC
+  // ├───────────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼─────────┼──────────┼───────────────────┤
+       &lt NAV TAB     &kp A   &kp S    &kp D       &kp F       &kp G            &kp H       &kp J       &kp K        &kp L     &kp SEMI   &lt SYMBL AT
+  // ├───────────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼─────────┼──────────┼───────────────────┤
+  //                                                                                                        ,<          .>          /?
+       &kp LSHFT       &kp Z   &kp X    &kp C       &kp V       &kp B            &kp N       &kp M       &kp COMMA    &kp DOT   &kp FSLH   &mt RSHIFT RETURN
+  // ╰───────────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼─────────┼──────────┼───────────────────╯
+                                        &mo HRDWR   &kp LCTRL   &kp LGUI         &kp SPACE   &kp LALT    &kp RETURN
+  //                                  ╰───────────┴───────────┴──────────╯     ╰───────────┴───────────┴────────────╯
+) 
 
-            bindings = <
-            &lt NUMFN ESC  &kp Q  &kp W  &kp E  &kp R  &kp T       /***/   &kp Y       &kp U       &kp I       &kp O     &kp P       &kp BSPC
-            &lt NAV TAB    &kp A  &kp S  &kp D  &kp F  &kp G       /***/   &kp H       &kp J       &kp K       &kp L     &kp SEMI    &lt SYMBL AT
-            &kp LSHFT      &kp Z  &kp X  &kp C  &kp V  &kp B       /***/   &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH    &mt RSHIFT RETURN
-                             &mo HRDWR   &kp LCTRL     &kp LGUI    /***/   &kp SPACE   &kp LALT    &kp RETURN
-            >;
-        };
-      
-        num_fn {
-            // -----------------------------------------------------------------------------------
-            // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 | /***/ |  7  |  8  |  9  |  -  |  /  |     |
-            // |  F7  |  F8 |  F9 | F10 | F11 | F12 | /***/ |  4  |  5  |  6  |  +  |  *  |     |
-            // | SHFT |     |     |     |     |     | /***/ |  1  |  2  |  3  |  .  |     |  =  |
-            // -------------------|     |     |     | /***/ |     |  0  |     |-------------------
-            // -----------------------------------------------------------------------------------
+ZMK_LAYER(num_fn,
+  // ╭─────────┬────────┬────────┬───────────┬───────────┬──────────╮     ╭───────────┬───────────┬────────────┬───────────┬─────────────────┬───────────────────╮
+  //                                                                                                                                           BKSP
+       &kp F1    &kp F2   &kp F3   &kp F4      &kp F5      &kp F6           &kp N7      &kp N8      &kp N9       &kp MINUS   &kp FSLH          ___ 
+  // ├─────────┼────────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼───────────┼─────────────────┼───────────────────┤
+       &kp F7    &kp F8   &kp F9   &kp F10     &kp F11     &kp F12          &kp N4      &kp N5      &kp N6       &kp PLUS    &kp KP_MULTIPLY   XXX
+  // ├─────────┼────────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼───────────┼─────────────────┼───────────────────┤
+       ___       XXX      XXX      XXX         XXX         XXX              &kp N1      &kp N2      &kp N3       &kp DOT     XXX               &kp EQUAL 
+  // ╰─────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼───────────┼─────────────────┼───────────────────╯
+                                        XXX         XXX         XXX              XXX         &kp N0      XXX
+  //                                  ╰───────────┴───────────┴──────────╯     ╰───────────┴───────────┴────────────╯
+) 
 
-            bindings = <
-              &kp F1  &kp F2  &kp F3   &kp F4   &kp F5    &kp F6    /***/    &kp N7     &kp N8  &kp N9  &kp MINUS    &kp FSLH          &none 
-              &kp F7  &kp F8  &kp F9   &kp F10  &kp F11   &kp F12   /***/    &kp N4     &kp N5  &kp N6  &kp PLUS     &kp KP_MULTIPLY   &none
-              &trans  &none   &none    &none    &none     &none     /***/    &kp N1     &kp N2  &kp N3  &kp DOT      &none             &kp EQUAL 
-                                         &none  &none     &none     /***/    &none      &kp N0  &none
-            >;
-        };
-      
-        symbols {
-            // --------------------------------------------------------------------------------------------
-            // |      |  !  |  '@  |  £  |  $  |  %  | /***/ |  ^  |   &  |    *  |   (    |   )   |  BKSP |
-            // |      |     |  \|  |  #~ | [{  |  ]} | /***/ | #~  |  =+  |   `¬  |        |  -_   |       |
-            // | SHFT |     |      |     |     |     | /***/ |     |      |       |        |       | SHFT  |
-            // --------------------|     |     |     | /***/ |     |      |       |------------------------
-            // --------------------------------------------------------------------------------------------
-       
-            bindings = <
-    &none  &kp EXCL  &kp SQT    &kp HASH  &kp DLLR  &kp PRCNT   /***/   &kp CARET     &kp AMPS    &kp KP_MULTIPLY    &kp LPAR  &kp RPAR   &trans
-    &none  &none     &kp NUBS   &kp NUHS  &kp LBKT  &kp RBKT    /***/   &kp NUHS      &kp EQUAL   &kp GRAVE          &none     &kp MINUS  &none
-    &trans &none     &none      &none     &none     &none       /***/   &none         &none       &none              &none     &none      &trans      
-                                &none     &none     &trans      /***/   &trans        &trans      &trans
-            >;
-        };
+ZMK_LAYER(symbols,
+  // ╭─────┬──────────┬──────────┬──────────┬──────────┬───────────╮     ╭───────────┬───────────┬─────────────────┬───────────┬───────────┬──────╮
+  //                      '@         £                                                                                                       BKSP
+       XXX   &kp EXCL   &kp SQT    &kp HASH   &kp DLLR   &kp PRCNT         &kp CARET   &kp AMPS    &kp KP_MULTIPLY   &kp LPAR    &kp RPAR    ___
+  // ├─────┼──────────┼──────────┼──────────┼──────────┼───────────┤     ├───────────┼───────────┼─────────────────┼───────────┼───────────┼──────┤
+  //                                  \|          [{         ]}               #~           =+          `¬
+       XXX   XXX        XXX        &kp NUBS   &kp LBKT   &kp RBKT          &kp NUHS    &kp EQUAL   &kp GRAVE         XXX         &kp MINUS   XXX
+  // ├─────┼──────────┼──────────┼──────────┼──────────┼───────────┤     ├───────────┼───────────┼─────────────────┼───────────┼───────────┼──────┤
+       ___   XXX        XXX        XXX        XXX        XXX               XXX         XXX         XXX               XXX         XXX         ___      
+  // ╰─────┼──────────┼──────────┼──────────┼──────────┼───────────┤     ├───────────┼───────────┼─────────────────┼───────────┼───────────┼──────╯
+                                   XXX        XXX        ___               ___         ___         ___
+  //                             ╰──────────┴──────────┴───────────╯     ╰───────────┴───────────┴─────────────────╯
+) 
 
-        hardware {
-            // -----------------------------------------------------------------------------------------------------------------------------------------
-            // |  RGB BRI+  |  RGB SAT+ | RGB HUE+ | RGB EFC+ | RGB SPD+ | RGB TOG | /***/ | VOL DWN  |   MUTE  | VOL UP |   PREV   | PLY/PSE |  NEXT  |
-            // |  RGB BRI-  |  RGB SAT- | RGB HUE- | RGB EFC- | RGB SPD- |         | /***/ |  L_ARRW  |  D_ARRW | U_ARRW |  R_ARRW  |         |        |      
-            // |   BTCLR    |    BT1    |   BT2    |   BT3    |   BT4    |   BT5   | /***/ |          |         |        |          |         |        |
-            // ------------------------------------|          |          |         | /***/ |          |         |        |------------------------------
-            // -----------------------------------------------------------------------------------------------------------------------------------------
 
-            bindings = <
-    &rgb_ug RGB_BRI   &rgb_ug RGB_SAI   &rgb_ug RGB_HUI   &rgb_ug RGB_EFF   &rgb_ug RGB_SPI   &rgb_ug RGB_TOG    /***/  &kp C_VOL_DN     &kp K_MUTE       &kp C_VOL_UP   &kp C_PREV         &kp C_PP    &kp C_NEXT
-    &rgb_ug RGB_BRD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPD   &none              /***/  &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW    &none       &none
-         &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3   &bt BT_SEL 4       /***/  &none            &none            &none          &none              &none       &none
-                                                                    &none             &none   &trans             /***/  &trans  &trans  &trans
-            >;
-        };
-        
+ZMK_LAYER(hardware,
+  // ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮     ╭────────────────┬────────────────┬──────────────┬─────────────────┬──────────┬────────────╮
+       &rgb_ug RGB_BRI   &rgb_ug RGB_SAI   &rgb_ug RGB_HUI   &rgb_ug RGB_EFF   &rgb_ug RGB_SPI   &rgb_ug RGB_TOG         &kp C_VOL_DN     &kp K_MUTE       &kp C_VOL_UP   &kp C_PREV        &kp C_PP   &kp C_NEXT
+  // ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤     ├────────────────┼────────────────┼──────────────┼─────────────────┼──────────┼────────────┤
+       &rgb_ug RGB_BRD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPD   XXX                                                _ARROW_KEYS_                            XXX        XXX
+  // ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤     ├────────────────┼────────────────┼──────────────┼─────────────────┼──────────┼────────────┤
+                                                    _BT_SEL_KEYS_                                                        XXX              XXX              XXX            XXX               XXX        XXX
+  // ╰─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤     ├────────────────┼────────────────┼──────────────┼─────────────────┼──────────┼────────────╯
+                                                             ___               ___               ___                     ___              ___              ___
+  //                                                       ╰─────────────────┴─────────────────┴─────────────────╯     ╰────────────────┴────────────────┴──────────────╯
+) 
 
-        nav {
-            // --------------------------------------------------------------------------------------------------------------------------------------------
-            // |          |          |          |          |           |          | /***/ |          |          |          |          |          |        |
-            // |          |          |          |          |           |          | /***/ |  L_ARRW  |  D_ARRW  |  U_ARRW  |  R_ARRW  |          |        |      
-            // |          |          |          |          |           |          | /***/ |          |          |          |          |          |        |
-            // ---------------------------------|          |           |          | /***/ |          |          |          |-------------------------------
-            // --------------------------------------------------------------------------------------------------------------------------------------------
-
-            bindings = <
-              &none     &none     &none     &none     &none     &none   /***/   &none            &none            &none           &none             &none   &trans
-              &none     &none     &none     &none     &none     &none   /***/   &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW    &kp RIGHT_ARROW   &none   &none
-              &trans    &none     &none     &none     &none     &none   /***/   &none            &none            &none           &none             &none   &none      
-                                      &none     &none      &trans       /***/   &trans           &trans           &trans
-            >;
-        };
-    };
-};
+ZMK_LAYER(nav,
+  // ╭─────┬─────┬─────┬─────┬─────┬─────╮     ╭─────┬─────┬─────┬─────┬─────┬─────╮
+       XXX   XXX   XXX   XXX   XXX   XXX         XXX   XXX   XXX   XXX   XXX   ___
+  // ├─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┤
+       XXX   XXX   XXX   XXX   XXX   XXX              _ARROW_KEYS_       XXX   XXX
+  // ├─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────┤
+       ___   XXX   XXX   XXX   XXX   XXX         XXX   XXX   XXX   XXX   XXX   XXX      
+  // ╰─────┼─────┼─────┼─────┼─────┼─────┤     ├─────┼─────┼─────┼─────┼─────┼─────╯
+                         XXX   XXX   ___         ___   ___   ___
+  //                   ╰─────┴─────┴─────╯     ╰─────┴─────┴─────╯
+) 
 
 // vi: ft=devicetree
