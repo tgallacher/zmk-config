@@ -14,7 +14,7 @@
 
 #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
 #define _ARROW_KEYS_ &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW
-#define XXX XXX
+#define XXX &none
 #define ___ &trans
 
 /* Global Settings */
@@ -113,4 +113,4 @@ ZMK_LAYER(nav,
   //                   ╰─────┴─────┴─────╯     ╰─────┴─────┴─────╯
 ) 
 
-// vi: ft=devicetree
+// vi: ft=c
