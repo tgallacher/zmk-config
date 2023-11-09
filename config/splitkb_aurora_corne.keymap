@@ -41,10 +41,10 @@
   chain-length = <12>;
 };
 
-// &kscan {
-//   debounce-press-ms = <3>;
-//   debounce-release-ms = <3>;
-// };
+&kscan {
+  debounce-press-ms = <1>;
+  debounce-release-ms = <5>;
+};
 
 /* Keymap */
 
