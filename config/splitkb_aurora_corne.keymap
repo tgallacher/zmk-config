@@ -58,7 +58,7 @@ ZMK_LAYER(base,
   //                                                                                                        ,<          .>          /?
        &kp LCTRL       &kp Z   &kp X    &kp C       &kp V       &kp B            &kp N       &kp M       &kp COMMA    &kp DOT   &kp FSLH   &mt RSHIFT RETURN
   // ╰───────────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼─────────┼──────────┼───────────────────╯
-                                        &mo HRDWR   &mo SYMBL   &kp LGUI         &kp SPACE   &kp LALT    &kp MINUS
+                                        &mo HRDWR   &mo SYMBL   &kp LGUI         &kp SPACE   &kp LALT    &kp BSPC
   //                                  ╰───────────┴───────────┴──────────╯     ╰───────────┴───────────┴────────────╯
 ) 
 
