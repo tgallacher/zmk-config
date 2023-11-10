@@ -58,7 +58,7 @@ ZMK_LAYER(base,
   //                                                                                                        ,<          .>          /?
        &kp LCTRL       &kp Z   &kp X    &kp C       &kp V       &kp B            &kp N       &kp M       &kp COMMA    &kp DOT   &kp FSLH   &mt RSHIFT RETURN
   // ╰───────────────┼───────┼────────┼───────────┼───────────┼──────────┤     ├───────────┼───────────┼────────────┼─────────┼──────────┼───────────────────╯
-                                        &mo HRDWR   &mo SYMBL   &kp LGUI         &kp SPACE   &kp LALT    &kp BSPC
+                                        &mo HRDWR   &mo SYMBL   &kp LGUI         &kp SPACE   &kp LALT      ___ 
   //                                  ╰───────────┴───────────┴──────────╯     ╰───────────┴───────────┴────────────╯
 ) 
 
@@ -78,7 +78,7 @@ ZMK_LAYER(num_fn,
 ZMK_LAYER(symbols,
   // ╭─────┬──────────┬──────────┬──────────┬──────────┬───────────╮     ╭───────────┬───────────┬─────────────────┬───────────┬───────────┬──────────╮
   //                      '@         £                                                                                                       
-       XXX   &kp EXCL   &kp SQT    &kp HASH   &kp DLLR   &kp PRCNT         &kp CARET   &kp AMPS    &kp KP_MULTIPLY   &kp LPAR    &kp RPAR    ___
+       XXX   &kp EXCL   &kp SQT    &kp HASH   &kp DLLR   &kp PRCNT         &kp CARET   &kp AMPS    &kp KP_MULTIPLY   &kp LPAR    &kp RPAR    &kp BSPC
   // ├─────┼──────────┼──────────┼──────────┼──────────┼───────────┤     ├───────────┼───────────┼─────────────────┼───────────┼───────────┼──────────┤
   //                                  \|          [{         ]}               #~           =+          `¬                [{         ]}        '@
        XXX   XXX        XXX        &kp NUBS   &kp LBKT   &kp RBKT          &kp NUHS    &kp EQUAL   &kp GRAVE         &kp LBKT    &kp RBKT    &kp SQT
