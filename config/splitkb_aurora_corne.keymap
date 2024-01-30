@@ -18,7 +18,7 @@
 #define ___ &trans
 
 /* Global Settings */
-#define QUICK_TAP_MS 175
+#define QUICK_TAP_MS 125
 
 &lt {  // layer-tap config
     flavor = "balanced";
@@ -32,6 +32,7 @@
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
+    require-prior-idel-ms = <150>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&kp>, <&kp>;
 )
