@@ -54,7 +54,7 @@
 
 /* Keymap */
 
-            NUHS    BSLH    HASH    NUBS    GRAVE     SHFT APOS
+//            NUHS    BSLH    HASH    NUBS    GRAVE     SHFT APOS
 // GB PC         #      #      £         \       `         @
 // GB            \      \      £         `       §         "
 // US PC         \      \      #         `       §         "
