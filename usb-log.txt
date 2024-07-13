@@ -1,0 +1,235 @@
+[23:10:25.505] tio v2.8
+[23:10:25.505] Press ctrl-t q to quit
+[23:10:25.508] Connected
+atrix_read: Sending evedbg> zmk: zmk_hid_implicit_modifiers_press: Modifi
+[00:22:36.693,206] [0m<dbg> zmk: decide_hold_tap: 35 decided tap (hold-preferred decision moment key-up)[0m
+[00:22:36.693,206] [0m<dbg> zmk: on_keymap_binding_pressed: position 35 keycode 0x70028[0m
+[00:22:36.693,237] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x28 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:36.693,267] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:22:36.693,267] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:36.693,328] [0m<dbg> zmk: on_keymap_binding_released: position 35 keycode 0x70028[0m
+[00:22:36.693,359] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x28 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:36.693,389] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:22:36.693,389] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:36.694,305] [0m<dbg> zmk: on_hold_tap_binding_released: 35 cleaning up hold-tap[0m
+[00:22:42.236,145] [0m<dbg> zmk: kscan_matrix_read: Sending event at 0,5 state on[0m
+[00:22:42.236,267] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 5, position: 5, pressed: true[0m
+[00:22:42.236,267] [0m<dbg> zmk: position_state_changed_listener: 5 bubble (no undecided hold_tap active)[0m
+[00:22:42.236,328] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 5, binding name: key_press[0m
+[00:22:42.236,358] [0m<dbg> zmk: on_keymap_binding_pressed: position 5 keycode 0x70017[0m
+[00:22:42.236,389] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x17 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:42.236,389] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:22:42.236,419] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:42.291,137] [0m<dbg> zmk: kscan_matrix_read: Sending event at 0,5 state off[0m
+[00:22:42.291,259] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 5, position: 5, pressed: false[0m
+[00:22:42.291,290] [0m<dbg> zmk: position_state_changed_listener: 5 bubble (no undecided hold_tap active)[0m
+[00:22:42.291,351] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 5, binding name: key_press[0m
+[00:22:42.291,381] [0m<dbg> zmk: on_keymap_binding_released: position 5 keycode 0x70017[0m
+[00:22:42.291,412] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x17 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:42.291,412] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:22:42.291,442] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:47.780,151] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,5 state on[0m
+[00:22:47.780,273] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 5, position: 17, pressed: true[0m
+[00:22:47.780,273] [0m<dbg> zmk: position_state_changed_listener: 17 bubble (no undecided hold_tap active)[0m
+[00:22:47.780,334] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 17, binding name: key_press[0m
+[00:22:47.780,364] [0m<dbg> zmk: on_keymap_binding_pressed: position 17 keycode 0x7000A[0m
+[00:22:47.780,395] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x0A implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:47.780,395] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:22:47.780,426] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:47.849,151] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,5 state off[0m
+[00:22:47.849,273] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 5, position: 17, pressed: false[0m
+[00:22:47.849,304] [0m<dbg> zmk: position_state_changed_listener: 17 bubble (no undecided hold_tap active)[0m
+[00:22:47.849,365] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 17, binding name: key_press[0m
+[00:22:47.849,395] [0m<dbg> zmk: on_keymap_binding_released: position 17 keycode 0x7000A[0m
+[00:22:47.849,426] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x0A implicit_mods 0x00 explicit_mods 0x00[0m
+[00:22:47.849,426] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:22:47.849,456] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:22:52.781,311] [0m<dbg> zmk: vddh_sample_fetch: ADC raw 3002 ~ 4395 mV => 100%[0m
+[00:23:35.523,132] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,5 state on[0m
+[00:23:35.523,254] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 5, position: 29, pressed: true[0m
+[00:23:35.523,315] [0m<dbg> zmk: position_state_changed_listener: 29 bubble (no undecided hold_tap active)[0m
+[00:23:35.523,376] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 29, binding name: key_press[0m
+[00:23:35.523,406] [0m<dbg> zmk: on_keymap_binding_pressed: position 29 keycode 0x70005[0m
+[00:23:35.523,437] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:23:35.523,437] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:23:35.523,468] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:23:35.524,230] [0m<dbg> zmk: vddh_sample_fetch: ADC raw 3000 ~ 4390 mV => 100%[0m
+[00:23:35.587,127] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,5 state off[0m
+[00:23:35.587,249] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 5, position: 29, pressed: false[0m
+[00:23:35.587,280] [0m<dbg> zmk: position_state_changed_listener: 29 bubble (no undecided hold_tap active)[0m
+[00:23:35.587,341] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 29, binding name: key_press[0m
+[00:23:35.587,371] [0m<dbg> zmk: on_keymap_binding_released: position 29 keycode 0x70005[0m
+[00:23:35.587,402] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:23:35.587,402] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:23:35.587,432] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:23:42.711,151] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,4 state on[0m
+[00:23:42.711,273] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 4, position: 16, pressed: true[0m
+[00:23:42.711,273] [0m<dbg> zmk: position_state_changed_listener: 16 bubble (no undecided hold_tap active)[0m
+[00:23:42.711,334] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 16, binding name: key_press[0m
+[00:23:42.711,364] [0m<dbg> zmk: on_keymap_binding_pressed: position 16 keycode 0x70009[0m
+[00:23:42.711,395] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x09 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:23:42.711,395] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:23:42.711,425] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:23:42.783,142] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,4 state off[0m
+[00:23:42.783,264] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 4, position: 16, pressed: false[0m
+[00:23:42.783,294] [0m<dbg> zmk: position_state_changed_listener: 16 bubble (no undecided hold_tap active)[0m
+[00:23:42.783,355] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 16, binding name: key_press[0m
+[00:23:42.783,386] [0m<dbg> zmk: on_keymap_binding_released: position 16 keycode 0x70009[0m
+[00:23:42.783,416] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x09 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:23:42.783,416] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:23:42.783,447] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:24:00.753,143] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,3 state on[0m
+[00:24:00.753,265] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 3, position: 27, pressed: true[0m
+[00:24:00.753,265] [0m<dbg> zmk: position_state_changed_listener: 27 bubble (no undecided hold_tap active)[0m
+[00:24:00.753,326] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 27, binding name: key_press[0m
+[00:24:00.753,356] [0m<dbg> zmk: on_keymap_binding_pressed: position 27 keycode 0x70006[0m
+[00:24:00.753,387] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:24:00.753,387] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:24:00.753,417] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:24:00.826,141] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,3 state off[0m
+[00:24:00.826,263] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 3, position: 27, pressed: false[0m
+[00:24:00.826,293] [0m<dbg> zmk: position_state_changed_listener: 27 bubble (no undecided hold_tap active)[0m
+[00:24:00.826,354] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 27, binding name: key_press[0m
+[00:24:00.826,385] [0m<dbg> zmk: on_keymap_binding_released: position 27 keycode 0x70006[0m
+[00:24:00.826,416] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:24:00.826,416] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:24:00.826,446] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:20.719,146] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,1 state on[0m
+[00:25:20.719,268] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 1, position: 25, pressed: true[0m
+[00:25:20.719,299] [0m<dbg> zmk: position_state_changed_listener: 25 bubble (no undecided hold_tap active)[0m
+[00:25:20.719,360] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 25, binding name: key_press[0m
+[00:25:20.719,421] [0m<dbg> zmk: on_keymap_binding_pressed: position 25 keycode 0x7001D[0m
+[00:25:20.719,451] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x1D implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:20.719,451] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:25:20.719,482] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:20.720,245] [0m<dbg> zmk: vddh_sample_fetch: ADC raw 2999 ~ 4390 mV => 100%[0m
+[00:25:20.772,125] [0m<dbg> zmk: kscan_matrix_read: Sending event at 2,1 state off[0m
+[00:25:20.772,247] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 2, col: 1, position: 25, pressed: false[0m
+[00:25:20.772,277] [0m<dbg> zmk: position_state_changed_listener: 25 bubble (no undecided hold_tap active)[0m
+[00:25:20.772,338] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 25, binding name: key_press[0m
+[00:25:20.772,369] [0m<dbg> zmk: on_keymap_binding_released: position 25 keycode 0x7001D[0m
+[00:25:20.772,369] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x1D implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:20.772,399] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:25:20.772,430] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:26.972,137] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,2 state on[0m
+[00:25:26.972,259] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 2, position: 14, pressed: true[0m
+[00:25:26.972,290] [0m<dbg> zmk: position_state_changed_listener: 14 bubble (no undecided hold_tap active)[0m
+[00:25:26.972,351] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 14, binding name: key_press[0m
+[00:25:26.972,381] [0m<dbg> zmk: on_keymap_binding_pressed: position 14 keycode 0x70016[0m
+[00:25:26.972,381] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:26.972,412] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:25:26.972,412] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:27.022,125] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,2 state off[0m
+[00:25:27.022,247] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 2, position: 14, pressed: false[0m
+[00:25:27.022,277] [0m<dbg> zmk: position_state_changed_listener: 14 bubble (no undecided hold_tap active)[0m
+[00:25:27.022,338] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 14, binding name: key_press[0m
+[00:25:27.022,369] [0m<dbg> zmk: on_keymap_binding_released: position 14 keycode 0x70016[0m
+[00:25:27.022,399] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:27.022,399] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:25:27.022,430] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:27.906,127] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,3 state on[0m
+[00:25:27.906,250] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 3, position: 15, pressed: true[0m
+[00:25:27.906,250] [0m<dbg> zmk: position_state_changed_listener: 15 bubble (no undecided hold_tap active)[0m
+[00:25:27.906,311] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 15, binding name: key_press[0m
+[00:25:27.906,341] [0m<dbg> zmk: on_keymap_binding_pressed: position 15 keycode 0x70007[0m
+[00:25:27.906,372] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x07 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:27.906,372] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:25:27.906,402] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:27.969,146] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,3 state off[0m
+[00:25:27.969,268] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 3, position: 15, pressed: false[0m
+[00:25:27.969,299] [0m<dbg> zmk: position_state_changed_listener: 15 bubble (no undecided hold_tap active)[0m
+[00:25:27.969,360] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 15, binding name: key_press[0m
+[00:25:27.969,390] [0m<dbg> zmk: on_keymap_binding_released: position 15 keycode 0x70007[0m
+[00:25:27.969,421] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x07 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:27.969,421] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:25:27.969,451] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:29.327,697] [0m<dbg> zmk: split_central_notify_func: [NOTIFICATION] data 0x2000e463 length 16[0m
+[00:25:29.327,728] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,728] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,758] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,758] [0m<dbg> zmk: split_central_notify_func: data: 64[0m
+[00:25:29.327,789] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,789] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,819] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,819] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,850] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,880] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,880] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,880] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,911] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,911] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,941] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.327,941] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.328,033] [0m<dbg> zmk: peripheral_event_work_callback: Trigger key position state change for 30[0m
+[00:25:29.328,063] [0m<dbg> zmk: position_state_changed_listener: 30 bubble (no undecided hold_tap active)[0m
+[00:25:29.328,094] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 30, binding name: key_press[0m
+[00:25:29.328,125] [0m<dbg> zmk: on_keymap_binding_pressed: position 30 keycode 0x70011[0m
+[00:25:29.328,155] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x11 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:29.328,186] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00[0m
+[00:25:29.328,186] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:29.830,200] [0m<dbg> zmk: split_central_notify_func: [NOTIFICATION] data 0x2000e463 length 16[0m
+[00:25:29.830,230] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,230] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,261] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,261] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,291] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,291] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,322] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,322] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,352] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,352] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,383] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,383] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,413] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,413] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,444] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,444] [0m<dbg> zmk: split_central_notify_func: data: 0[0m
+[00:25:29.830,535] [0m<dbg> zmk: peripheral_event_work_callback: Trigger key position state change for 30[0m
+[00:25:29.830,566] [0m<dbg> zmk: position_state_changed_listener: 30 bubble (no undecided hold_tap active)[0m
+[00:25:29.830,596] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 30, binding name: key_press[0m
+[00:25:29.830,627] [0m<dbg> zmk: on_keymap_binding_released: position 30 keycode 0x70011[0m
+[00:25:29.830,657] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x11 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:29.830,688] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:25:29.830,688] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:40.424,133] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,0 state on[0m
+[00:25:40.424,255] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 0, position: 12, pressed: true[0m
+[00:25:40.424,255] [0m<dbg> zmk: position_state_changed_listener: 12 bubble (no undecided hold_tap active)[0m
+[00:25:40.424,316] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 12, binding name: mod_tap[0m
+[00:25:40.424,346] [0m<dbg> zmk: on_hold_tap_binding_pressed: 12 new undecided hold_tap[0m
+[00:25:40.624,511] [0m<dbg> zmk: decide_hold_tap: 12 decided hold-timer (hold-preferred decision moment timer)[0m
+[00:25:40.624,664] [0m<dbg> zmk: on_keymap_binding_pressed: position 12 keycode 0x700E0[0m
+[00:25:40.624,694] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:40.624,694] [0m<dbg> zmk: zmk_hid_register_mod: Modifier 0 count 1[0m
+[00:25:40.624,725] [0m<dbg> zmk: zmk_hid_register_mod: Modifiers set to 0x01[0m
+[00:25:40.624,725] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x01[0m
+[00:25:40.624,755] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:40.686,126] [0m<dbg> zmk: kscan_matrix_read: Sending event at 0,5 state on[0m
+[00:25:40.686,218] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 5, position: 5, pressed: true[0m
+[00:25:40.686,248] [0m<dbg> zmk: position_state_changed_listener: 5 bubble (no undecided hold_tap active)[0m
+[00:25:40.686,309] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 5, binding name: key_press[0m
+[00:25:40.686,340] [0m<dbg> zmk: on_keymap_binding_pressed: position 5 keycode 0x70017[0m
+[00:25:40.686,370] [0m<dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x17 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:40.686,370] [0m<dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x01[0m
+[00:25:40.686,401] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:40.802,124] [0m<dbg> zmk: kscan_matrix_read: Sending event at 0,5 state off[0m
+[00:25:40.802,246] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 5, position: 5, pressed: false[0m
+[00:25:40.802,276] [0m<dbg> zmk: position_state_changed_listener: 5 bubble (no undecided hold_tap active)[0m
+[00:25:40.802,337] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 5, binding name: key_press[0m
+[00:25:40.802,368] [0m<dbg> zmk: on_keymap_binding_released: position 5 keycode 0x70017[0m
+[00:25:40.802,368] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x17 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:40.802,398] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x01[0m
+[00:25:40.802,398] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:40.843,139] [0m<dbg> zmk: kscan_matrix_read: Sending event at 1,0 state off[0m
+[00:25:40.843,261] [0m<dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 0, position: 12, pressed: false[0m
+[00:25:40.843,292] [0m<dbg> zmk: position_state_changed_listener: 12 bubble (no undecided hold_tap active)[0m
+[00:25:40.843,353] [0m<dbg> zmk: zmk_keymap_apply_position_state: layer: 0 position: 12, binding name: mod_tap[0m
+[00:25:40.843,383] [0m<dbg> zmk: on_keymap_binding_released: position 12 keycode 0x700E0[0m
+[00:25:40.843,414] [0m<dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00[0m
+[00:25:40.843,444] [0m<dbg> zmk: zmk_hid_unregister_mod: Modifier 0 count: 0[0m
+[00:25:40.843,444] [0m<dbg> zmk: zmk_hid_unregister_mod: Modifier 0 released[0m
+[00:25:40.843,475] [0m<dbg> zmk: zmk_hid_unregister_mod: Modifiers set to 0x00[0m
+[00:25:40.843,475] [0m<dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00[0m
+[00:25:40.843,505] [0m<dbg> zmk: zmk_endpoints_send_report: usage page 0x07[0m
+[00:25:40.843,566] [0m<dbg> zmk: on_hold_tap_binding_released: 12 cleaning up hold-tap[0m
+
+[23:13:29.735] Disconnected
