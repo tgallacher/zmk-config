@@ -20,7 +20,7 @@
 
 &lt {  // layer-tap config
     flavor = "balanced";
-    tapping-term-ms = <190>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
@@ -93,9 +93,9 @@
        &mt LCTRL TAB          &kp A            &kp S             &kp D           &kp F              &kp G                    &kp H           &kp J         &kp K           &kp L             &kp SEMI   &kp APOS
   // ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤     ├────────────────┼────────────────┼──────────────┼─────────────────┼──────────┼────────────┤
   //                                                                                                                                                            ,<              .>             /?
-       &kp LSHIFT             &kp Z            &kp X            &kp C           &kp V              &kp B                    &kp N           &kp M          &kp COMMA       &kp DOT           &kp FSLH   &lt SYMBL RETURN
+       &kp LSHIFT             &kp Z            &kp X            &kp C           &kp V              &kp B                    &kp N           &kp M          &kp COMMA       &kp DOT           &kp FSLH   &kp RETURN
   // ╰─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤     ├────────────────┼────────────────┼──────────────┼─────────────────┼──────────┼────────────╯
-                                                               &mo HRDWR        &kp LALT         &kp LGUI                 &kp SPACE       &kp LSHIFT          XXX
+                                                               &mo HRDWR        &kp LALT         &kp LGUI                 &kp SPACE       &mo SYMBL        &kp BSLH
   //                                                       ╰─────────────────┴─────────────────┴─────────────────╯     ╰────────────────┴────────────────┴──────────────╯
       >;
     };
