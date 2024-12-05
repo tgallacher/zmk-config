@@ -14,7 +14,7 @@
 #define _ARROW_KEYS_ &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW
 #define XXX &none
 #define ___ &trans
-#define HYPER LC(LG(LA(LS())))
+#define HYPER LC(LG(LA(LSHIFT)))
 
 /* Global Settings */
 #define QUICK_TAP_MS 125
