@@ -16,7 +16,7 @@
 #define ___ &trans
 #define HYPER LC(LG(LA(LSHIFT)))
 
-/* Global Settings */
+/*** Global Settings */
 #define QUICK_TAP_MS 125
 
 &lt {  // layer-tap config
@@ -25,7 +25,7 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-/* Custom key press behaviors */
+/*** Custom key press behaviors */
 
 // homerow mods
 // ZMK_BEHAVIOR(hrm, hold_tap,
@@ -74,9 +74,7 @@
 // US PC     \         \     #         §       `           "
 // US         \        \     #         §       `           "
 
-/*
- * OSX Must be set to:: ISO Keyboard; GB Input
- */
+// NOTE: OSX Must be set to:: ISO Keyboard; GB Input
 / {
   keymap {
     compatible = "zmk,keymap";
