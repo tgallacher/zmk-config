@@ -19,11 +19,11 @@
 /*** Global Settings */
 #define QUICK_TAP_MS 125
 
-&lt {  // layer-tap config
-    flavor = "balanced";
-    tapping-term-ms = <150>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-};
+// &lt {  // layer-tap config
+//     flavor = "balanced";
+//     tapping-term-ms = <150>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+// };
 
 /*** Custom key press behaviors */
 
